@@ -4,20 +4,21 @@
 
 Web scraping is hard! It’s been a long time since we’ve had websites with simple CSS classes like `.header` and `.username` that we could query and scrape. These days, we have to deal with pesky utility classes and compiled CSS modules that obfuscate the fields we are looking for. Even if we find some way to scrape website data based on these CSS class names, these queries are bound to break on the next build when the CSS class names change again.
 
-To get a feel of this problem, let’s try scraping the social media posts of this mock website I put together: <a href="./static/kiwi-chirp/" target="_blank" rel="noopener noreferrer">Kiwi Chirp</a>. Can you write a selector in order to scrape all the social media posts on this page? Your aim is to get the content of each post, along with the poster’s name and handle. Go on, give it a go!
+To get a feel of this problem, let’s try scraping the social media posts of this mock website I put together: <a href="./static/kiwi-chirp/" target="_blank" rel="noopener noreferrer">Kiwi Chirp</a>. Can you write a selector in order to scrape all the social media posts on this page? Your aim is to get the content of all 7 posts, along with their respective poster’s name and user ID. Go on, give it a go!
 
 <p align=center>
   <img src="./static/website.png" style="width: min(100%, 600px)"><br/>
   <em>Your adversary for today: the Kiwi Chirp website.</em>
 </p>
 
-If you’ve made an attempt, you’ll find that the task is non-trivial. Attempting to scrape anything by attributes, styles, or roles alone is difficult, since there are many overlapping properties. For instance, trying to query the user handles (i.e. elements that start with “@”) will give us the elements in the posts, but also those in the “Recommended” bar. That’s not ideal, but let’s use this as a starting point.
+If you’ve made an attempt, you’ll find that the task is non-trivial. Attempting to scrape anything by attributes, styles, or roles alone is difficult, since there are many overlapping properties. For instance, trying to query the user ID (i.e. elements that start with “@”) will give us the elements in the posts, but also those in the “Recommended” bar. That’s not ideal, but let’s use this as a starting point.
 
 Let’s query all the elements that start with an “@”. Open the developer console on the Kiwi Chirp page and run the following command:
 
 ```javascript
-Array.from(document.querySelectorAll('*'))
-    .filter(elem => elem.textContent.startsWith('@'));
+Array.from(document.querySelectorAll('*')).filter((elem) =>
+    elem.textContent.startsWith('@')
+);
 ```
 
 It seems like we’re getting all the elements we want, but we’re also getting a few extra elements. Ugh.
@@ -32,20 +33,18 @@ That’s pretty close too, but we get some stray elements too. Nothing short of 
 
 The frustrating thing is, websites are so easy for users to read. There’s a nice hierarchy of elements that lead our eyes through the webpage and communicate the structure of the information. Can we somehow take advantage of that in a way that doesn’t require horrible parent-child element traversals?
 
-This is why I wrote the Domsi library. “Dom” as in “Document Object Model”, and “Si” as in “See”. The goal of this library is to query elements by what we can see: CSS styles, text content, and hierarchy. To show you how easy it is to do this, let’s start with a simple Domsi selector.
+Meet Domsi. “Dom” as in “Document Object Model”, and “Si” as in “See”. The goal of this library is to query elements by what we can see: CSS styles, text content, and hierarchy. To show you how easy it is to do this, let’s start with a simple Domsi selector.
 
 ```javascript
 {
-    tagName: 'a'
+    tagName: 'a';
 }
 ```
 
 Nothing impressive, we’re just finding all the anchor elements on the page. But let’s give it a go anyway. Head over to the Kiwi page. Domsi should already be loaded globally, so you can go ahead and use it with `domsi.find` or `domsi.findAll`. Let’s run the following code in the console:
 
 ```javascript
-domsi.findAll({
-    tagName: 'a'
-});
+domsi.findAll({ tagName: 'a' });
 ```
 
 Let’s take a look at the results. We have 26 elements in the result, and each one takes the following shape:
@@ -64,8 +63,8 @@ domsi.findAll({
     tagName: 'a',
     text: {
         type: 'regex',
-        regex: '^@'
-    }
+        regex: '^@',
+    },
 });
 ```
 
@@ -76,36 +75,36 @@ domsi.findAll({
     tagName: 'a',
     text: {
         type: 'regex',
-        regex: '^@'
+        regex: '^@',
     },
     css: {
         fontSize: '16px',
         fontWeight: '400',
-        color: '#AAAAAA'
-    }
+        color: '#AAAAAA',
+    },
 });
 ```
 
 There’s also an `attribute` and `property` field that allows us to query elements by their attributes and properties respectively, but I won’t go into it here. After all, what we have here is pretty powerful, and gives us a good way to query specific elements on the page. But we’re still not at the point where we can scrape all the posts on this page. So what’s next?
 
-Let’s take advantage of Domsi’s children selector. Let’s take our earlier selector and assign it to a `handlerSelector` variable.
+Let’s take advantage of Domsi’s children selector. Let’s take our earlier selector and assign it to a `userIdSelector` variable.
 
 ```javascript
-var handleSelector = {
+var userIdSelector = {
     tagName: 'a',
     text: {
         type: 'regex',
-        regex: '^@'
+        regex: '^@',
     },
     css: {
         fontSize: '16px',
         fontWeight: '400',
-        color: '#AAAAAA'
-    }
+        color: '#AAAAAA',
+    },
 };
 ```
 
-Let’s also add a `usernameSelector` too. This selectorlooks out for the usernames on the social media posts.
+Let’s also add a `usernameSelector` too. This selector looks out for the usernames on the social media posts.
 
 ```javascript
 var usernameSelector = {
@@ -113,54 +112,58 @@ var usernameSelector = {
     css: {
         fontSize: '16px',
         fontWeight: '700',
-        color: '#EEEEEE'
-    }
+        color: '#EEEEEE',
+    },
 };
 ```
 
 Now for the fun part. Run the following query:
 
 ```javascript
-domsi.findAll({
+var userInfoSelector = {
     children: {
         username: {
             type: 'single',
-            selector: usernameSelector
+            selector: usernameSelector,
         },
-        handle: {
+        userId: {
             type: 'single',
-            selector: handleSelector
-        }
-    }
-});
+            selector: userIdSelector,
+        },
+    },
+};
+
+domsi.findAll(userInfoSelector);
 ```
 
-We’re trying to query the div in the post that contains both the username and the handle. The `children` property allows us to specify a `username` and a `handle` child. The type is `single` since we’re only expecting 1 element of each, and the selector simply references the earlier selector.
+We’re trying to query the div in the post that contains both the username and the user ID. The `children` property allows us to specify a `username` and a `userId` child. The type is `single` since we’re only expecting 1 element of each, and the selector simply references the earlier selector.
 
 Looking at the results, we’re really close now. We’ve found the header element of each post, allowing us to scrape the data easily. However, we’re still getting the additional elements in the “Recommended” bar.
 
-Fret not! We realize that the text in the sidebar includes a newline in the text content, since the username and the handle takes up 2 rows. We can simply use the Regex selector from earlier, except now we invert the value with a `not` selector.
+Fret not! We realize that the text in the sidebar includes a newline in the text content, since the username and the user ID takes up 2 rows. We can simply use the Regex selector from earlier, except now we invert the value with a `not` selector.
 
 ```javascript
-domsi.findAll({
+var userInfoSelector = {
     text: {
         type: 'not',
         operand: {
             type: 'regex',
-            regex: '\n'
-        }
+            regex: '\n',
+        },
     },
     children: {
         username: {
             type: 'single',
-            selector: usernameSelector
+            selector: usernameSelector,
         },
-        handle: {
+        userId: {
             type: 'single',
-            selector: handleSelector
-        }
-    }
-});
+            selector: userIdSelector,
+        },
+    },
+};
+
+domsi.findAll(userInfoSelector);
 ```
 
 And there! We’ve created a selector which finds the exact elements we’re looking to scrape. With a bit more effort, we can put together a more complex selector.
@@ -170,8 +173,8 @@ var profileImgSelector = {
     tagName: 'img',
     css: {
         width: '50px',
-        height: '50px'
-    }
+        height: '50px',
+    },
 };
 
 var usernameSelector = {
@@ -179,25 +182,25 @@ var usernameSelector = {
     css: {
         fontSize: '16px',
         fontWeight: '700',
-        color: '#EEEEEE'
-    }
+        color: '#EEEEEE',
+    },
 };
 
-var handleSelector = {
+var userIdSelector = {
     tagName: 'a',
     text: {
         type: 'regex',
-        regex: '^@'
+        regex: '^@',
     },
     css: {
         fontSize: '16px',
         fontWeight: '400',
-        color: '#AAAAAA'
-    }
+        color: '#AAAAAA',
+    },
 };
 
 var timestampSelector = {
-    tagName: 'span'
+    tagName: 'span',
 };
 
 var postHeaderSelector = {
@@ -205,32 +208,32 @@ var postHeaderSelector = {
     children: {
         username: {
             type: 'single',
-            selector: usernameSelector
+            selector: usernameSelector,
         },
-        handle: {
+        userId: {
             type: 'single',
-            selector: handleSelector
+            selector: userIdSelector,
         },
         timestamp: {
             type: 'single',
-            selector: timestampSelector
-        }
-    }
-}
+            selector: timestampSelector,
+        },
+    },
+};
 
 var contentSelector = {
     attribute: {
-        dir: 'auto'
+        dir: 'auto',
     },
 };
 
 var likeCountSelector = {
-    tagName: 'span'
+    tagName: 'span',
 };
 
 var likeIconSelector = {
     attribute: {
-        'aria-label': 'Like'
+        'aria-label': 'Like',
     },
 };
 
@@ -238,23 +241,36 @@ var likeContainerSelector = {
     children: {
         likeCount: {
             type: 'single',
-            selector: likeCountSelector
+            selector: likeCountSelector,
         },
         likeIcon: {
             type: 'single',
-            selector: likeIconSelector
-        }
-    }
+            selector: likeIconSelector,
+        },
+    },
 };
 
 var commentCountSelector = {
-    tagName: 'span'
+    tagName: 'span',
 };
 
 var commentIconSelector = {
     attribute: {
-        'aria-label': 'Comment'
-    }
+        'aria-label': 'Comment',
+    },
+};
+
+var commentContainerSelector = {
+    children: {
+        commentCount: {
+            type: 'single',
+            selector: commentCountSelector,
+        },
+        commentIcon: {
+            type: 'single',
+            selector: commentIconSelector,
+        },
+    },
 };
 
 var postFooterSelector = {
@@ -263,27 +279,14 @@ var postFooterSelector = {
         likeContainer: {
             type: 'single',
             transparent: true,
-            selector: likeContainerSelector
+            selector: likeContainerSelector,
         },
         commentContainer: {
             type: 'single',
             transparent: true,
-            selector: commentContainerSelector
-        }
-    }
-}
-
-var commentContainerSelector = {
-    children: {
-        commentCount: {
-            type: 'single',
-            selector: commentCountSelector
+            selector: commentContainerSelector,
         },
-        commentIcon: {
-            type: 'single',
-            selector: commentIconSelector
-        }
-    }
+    },
 };
 
 var postSelector = {
@@ -291,41 +294,74 @@ var postSelector = {
     children: {
         profileImg: {
             type: 'single',
-            selector: profileImgSelector
+            selector: profileImgSelector,
         },
         postHeader: {
             type: 'single',
             transparent: true,
-            selector: postHeaderSelector
+            selector: postHeaderSelector,
         },
         postFooter: {
             type: 'single',
             transparent: true,
-            selector: postFooterSelector
+            selector: postFooterSelector,
         },
         content: {
             type: 'single',
-            selector: contentSelector
-        }
-    }
+            selector: contentSelector,
+        },
+    },
 };
 
 var results = domsi.findAll(postSelector);
+results;
 ```
 
-And there you go, all the respective elements are queried. Thanks to the `children` property in each result, we can simply look up the property of each one to scrape the data.
+And there you go, all the respective elements are queried. Let’s check out the results this time.
 
 ```javascript
-var data = results.map(result => ({
-    profileImg: result.children.profileImg.node.src,
-    username: result.children.username.node.textContent,
-    handle: result.children.handle.node.textContent,
-    timestamp: result.children.timestamp.node.textContent,
-    profileUrl: result.children.handle.node.href,
-    likeCount: parseInt(result.children.likeCount.node.textContent),
-    commentCount: parseInt(result.children.commentCount.node.textContent),
-    content: result.children.content.node.innerText
-}));
+{
+    node: <HTML Element>,
+    children: {
+        username: { node: <HTML Element>, children: {} },
+        userId: { node: <HTML Element>, children: {} },
+        content: { node: <HTML Element>, children: {} },
+        timestamp: { node: <HTML Element>, children: {} },
+        profileImg: { node: <HTML Element>, children: {} },
+        content: { node: <HTML Element>, children: {} },
+        likeCount: { node: <HTML Element>, children: {} },
+        commentCount: { node: <HTML Element>, children: {} },
+        ...
+    }
+}
+```
+
+Notice how the fields under the `children` property matches the names we gave the child selectors? We can use that to look up the respective elements. Now, we can simply look up the property of each child element to scrape the data.
+
+```javascript
+var data = results.map((result) => {
+    const {
+        profileImg,
+        username,
+        userId,
+        timestamp,
+        likeCount,
+        commentCount,
+        content,
+    } = result.children;
+
+    return {
+        profileImg: profileImg.node.src,
+        username: username.node.textContent,
+        userId: userId.node.textContent,
+        timestamp: timestamp.node.textContent,
+        profileUrl: userId.node.href,
+        likeCount: parseInt(likeCount.node.textContent),
+        commentCount: parseInt(commentCount.node.textContent),
+        content: content.node.innerText,
+    };
+});
+data;
 ```
 
 And that’s it, we’re done! To recap, we’ve taken a non-trivial problem and reduced it to a bunch of easy-to-understand queries.
@@ -343,7 +379,9 @@ Thirdly, Domsi selectors do not rely on parent/child node navigation. If the web
 Fourthly, the query is self-documenting. Unlike horribly nested parent/child traversals and arbitrary property checks, Domsi queries allow you to label each node with an easy-to-understand selector. This makes development and maintenance much easier. No more tweaking xpaths and selectors! No more throwing out old scraping codes because the monolith of a function no longer works!
 
 And that’s not all! There are a lot more subtle features such as the `and` and `or` selectors. Also, when comparing colors, the color selector converts hex values and rgb values under the hood, saving yourself the unnecessary conversion headache. Check out the documentation for more info!
-But How Fast Is It?
+
+## But How Fast Is It?
+
 Very good question. What if you want to scrape a huge web page with tons of data? If Domsi uses an inefficient method to compute the hierarchy of selectors, then we’re going to end up with a very long runtime.
 
 Fortunately, Domsi uses a blazingly fast algorithm under the hood. The runtime of the query is:
@@ -353,9 +391,10 @@ Fortunately, Domsi uses a blazingly fast algorithm under the hood. The runtime o
 </p>
 
 Where:
-- `n`	= number of DOM nodes
-- `m`	= number of children selectors
-- `k`	= max height of DOM tree
+
+-   `n` = number of DOM nodes
+-   `m` = number of children selectors
+-   `k` = max height of DOM tree
 
 “But wait”, you may ask, “Is it even possible to do it this quickly? After all, the algorithm needs to do a recursive search to check if an element’s children match the selector’s hierarchy.”
 
@@ -366,7 +405,6 @@ Each of the 4 selectors also have their own fields to filter HTML nodes by their
 <p align=center>
   <img src="./static/query.png" style="width: min(100%, 250px)">
 </p>
-
 
 First, we do a topological sort of the selector’s children. For instance, given the following selector, we will start with the yellow, green, blue, then red selector.
 
@@ -459,6 +497,3 @@ Either way, there’s still some work to be done. But for now, the Domsi library
 You can check out the <a href="https://github.com/Kenneth-LJS/domsi" target="_blank" rel="noopener noreferrer">Domsi Github Page</a>, or install it from the <a href="https://www.npmjs.com/package/domsi" target="_blank" rel="noopener noreferrer">Node Package Manager</a>.
 
 Happy scraping!
-
-
-
