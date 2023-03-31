@@ -480,7 +480,7 @@ For each node, let’s assume it takes `O(1)` time to check if the styles and pr
 
 The topological sort takes `O(m)` time.
 
-After that, for each of the m selectors, we compare it with n different elements in the node for `O(nm)` time. Unfortunately, we have to traverse upwards through the DOM tree to mark the existence of a specific child, so that’s an `O(k)` time for each step.
+After that, for each of the `m` selectors, we compare it with `n` different elements in the node for `O(nm)` time. Unfortunately, we have to traverse upwards through the DOM tree to mark the existence of a specific child, so that’s an `O(k)` time for each step.
 
 That brings the overall runtime to `O(m) + O(nmk) = O(nmk)`. Unbelievably fast for the functionality of this complexity.
 
