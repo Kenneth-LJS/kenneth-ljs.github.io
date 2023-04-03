@@ -1,93 +1,342 @@
-<!DOCTYPE html><html lang="en"><head><title>Murder Mystery Game - Ken’s Developer Portfolio</title><meta charSet="utf-8"/><link rel="icon" href="/_next/static/media/favicon.74f1eb8a.ico"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content="The game engine for a Victorian Murder Mystery game I designed for an online event."/><meta name="language" content="english"/><meta name="copyright" content="Kenneth-LJS"/><meta name="distribution" content="global"/><meta property="og:title" content="Murder Mystery Game - Ken’s Developer Portfolio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.kenneth-ljs.com/article/murder-mystery-game/"/><meta property="og:description" content="The game engine for a Victorian Murder Mystery game I designed for an online event."/><meta property="og:image" content="https://www.kenneth-ljs.com/article/murder-mystery-game/thumbnail.png"/><meta property="og:image:type" content="image/jpeg"/><meta property="og:image:width" content="1000"/><meta property="og:image:height" content="1000"/><meta property="twitter:card" content="summary_large_image"/><meta property="twitter:title" content="Murder Mystery Game - Ken’s Developer Portfolio"/><meta property="twitter:description" content="The game engine for a Victorian Murder Mystery game I designed for an online event."/><meta property="twitter:image" content="https://www.kenneth-ljs.com/article/murder-mystery-game/thumbnail.png"/><meta property="twitter:url" content="https://www.kenneth-ljs.com/article/murder-mystery-game/"/><meta property="twitter:domain" content="kenneth-ljs.com"/><meta name="next-head-count" content="22"/><link rel="preload" href="/_next/static/css/5af414cf9c2f13fb.css" as="style"/><link rel="stylesheet" href="/_next/static/css/5af414cf9c2f13fb.css" data-n-g=""/><link rel="preload" href="/_next/static/css/32c57b5cc8967de0.css" as="style"/><link rel="stylesheet" href="/_next/static/css/32c57b5cc8967de0.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-ee7e63bc15b31913.js" defer=""></script><script src="/_next/static/chunks/framework-50116e63224baba2.js" defer=""></script><script src="/_next/static/chunks/main-3ee22cc5cd2ba8df.js" defer=""></script><script src="/_next/static/chunks/pages/_app-03bbd27282f070a7.js" defer=""></script><script src="/_next/static/chunks/108-fca37a76d41c82e2.js" defer=""></script><script src="/_next/static/chunks/187-88a9c6f910f35f09.js" defer=""></script><script src="/_next/static/chunks/646-1a0fd834ed773d15.js" defer=""></script><script src="/_next/static/chunks/pages/article/murder-mystery-game-d545b6d7c9f85aee.js" defer=""></script><script src="/_next/static/QSBPdznC8CrgShdU3M-nm/_buildManifest.js" defer=""></script><script src="/_next/static/QSBPdznC8CrgShdU3M-nm/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="basic-layout_page__ZDOnt"><div id="top"></div><div class="nav_navPlaceholder__CWYB7"></div><div class="nav_navContainer__rjN75" style="z-index:1000"><nav class="nav_nav__W__TS"><div class="nav_navBrandContainer__63F1X"><a tabindex="0" href="/#top"><div class="nav_navBrandImgContainer__WnhV_" style="aspect-ratio:100 / 100"><img alt="LIFC Logo" src="/_next/static/media/logo.3a54d410.png" decoding="async" data-nimg="fill" loading="lazy" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/></div></a></div><div class="nav_navMobileToggle__a5RSd" tabindex="0"><div class="nav_navMobileToggleBar1__i_RJs"></div><div class="nav_navMobileToggleBar2__RjpxR"></div><div class="nav_navMobileToggleBar3__hymqG"></div></div><div class="nav_navMobileToggleActiveBlock__Xbzk1"></div><div class="nav_navLinks__d901P"><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#about-me">About Me</a></div><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#experience">Experience</a></div><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#skills">Skills</a></div><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#resume">Resume</a></div><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#contact">Contact</a></div></div></nav></div><div class="basic-layout_innerPage__VVAIz" style="--inner-page-min-height:calc(100vh - 0px)"><div class="basic-layout_contentContainer__lVlG6"><main class="basic-layout_content__teZLy"><section class="section_sectionContent__Ecx81"><div class="page_article__eRMb9" style="--code-font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace"><header>
+<!DOCTYPE html><html lang="en"><head><title>Murder Mystery Game - Ken’s Developer Portfolio</title><meta charSet="utf-8"/><link rel="icon" href="/_next/static/media/favicon.74f1eb8a.ico"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content="The game engine for a Victorian Murder Mystery game I designed for an online event."/><meta name="language" content="english"/><meta name="copyright" content="Kenneth-LJS"/><meta name="distribution" content="global"/><meta property="og:title" content="Murder Mystery Game - Ken’s Developer Portfolio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.kenneth-ljs.com/article/murder-mystery-game/"/><meta property="og:description" content="The game engine for a Victorian Murder Mystery game I designed for an online event."/><meta property="og:image" content="https://www.kenneth-ljs.com/article/murder-mystery-game/thumbnail.png"/><meta property="og:image:type" content="image/jpeg"/><meta property="og:image:width" content="1000"/><meta property="og:image:height" content="1000"/><meta property="twitter:card" content="summary_large_image"/><meta property="twitter:title" content="Murder Mystery Game - Ken’s Developer Portfolio"/><meta property="twitter:description" content="The game engine for a Victorian Murder Mystery game I designed for an online event."/><meta property="twitter:image" content="https://www.kenneth-ljs.com/article/murder-mystery-game/thumbnail.png"/><meta property="twitter:url" content="https://www.kenneth-ljs.com/article/murder-mystery-game/"/><meta property="twitter:domain" content="kenneth-ljs.com"/><meta name="next-head-count" content="22"/><link rel="preload" href="/_next/static/css/5af414cf9c2f13fb.css" as="style"/><link rel="stylesheet" href="/_next/static/css/5af414cf9c2f13fb.css" data-n-g=""/><link rel="preload" href="/_next/static/css/32c57b5cc8967de0.css" as="style"/><link rel="stylesheet" href="/_next/static/css/32c57b5cc8967de0.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-ee7e63bc15b31913.js" defer=""></script><script src="/_next/static/chunks/framework-50116e63224baba2.js" defer=""></script><script src="/_next/static/chunks/main-3ee22cc5cd2ba8df.js" defer=""></script><script src="/_next/static/chunks/pages/_app-03bbd27282f070a7.js" defer=""></script><script src="/_next/static/chunks/108-fca37a76d41c82e2.js" defer=""></script><script src="/_next/static/chunks/187-88a9c6f910f35f09.js" defer=""></script><script src="/_next/static/chunks/646-1a0fd834ed773d15.js" defer=""></script><script src="/_next/static/chunks/pages/article/murder-mystery-game-5b86b8beb62c3b35.js" defer=""></script><script src="/_next/static/B-92oPAs8Y46_vTrF3Khs/_buildManifest.js" defer=""></script><script src="/_next/static/B-92oPAs8Y46_vTrF3Khs/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="basic-layout_page__ZDOnt"><div id="top"></div><div class="nav_navPlaceholder__CWYB7"></div><div class="nav_navContainer__rjN75" style="z-index:1000"><nav class="nav_nav__W__TS"><div class="nav_navBrandContainer__63F1X"><a tabindex="0" href="/#top"><div class="nav_navBrandImgContainer__WnhV_" style="aspect-ratio:100 / 100"><img alt="LIFC Logo" src="/_next/static/media/logo.3a54d410.png" decoding="async" data-nimg="fill" loading="lazy" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/></div></a></div><div class="nav_navMobileToggle__a5RSd" tabindex="0"><div class="nav_navMobileToggleBar1__i_RJs"></div><div class="nav_navMobileToggleBar2__RjpxR"></div><div class="nav_navMobileToggleBar3__hymqG"></div></div><div class="nav_navMobileToggleActiveBlock__Xbzk1"></div><div class="nav_navLinks__d901P"><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#about-me">About Me</a></div><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#experience">Experience</a></div><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#skills">Skills</a></div><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#resume">Resume</a></div><div class="nav_navLinkContainer__9WK_y"><a class="nav_navLink__wzVGa" tabindex="0" href="/#contact">Contact</a></div></div></nav></div><div class="basic-layout_innerPage__VVAIz" style="--inner-page-min-height:calc(100vh - 0px)"><div class="basic-layout_contentContainer__lVlG6"><main class="basic-layout_content__teZLy"><section class="section_sectionContent__Ecx81"><div class="page_article__eRMb9" style="--code-font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace"><div style="display:none">
+Outline:
+A Victorian Murder Mystery
+In 2022, there was an online event that featured a Murder Mystery game. Working with writers and artists, I needed to come up with a game engine for a puzzle.
+Gameplay: people find codes hidden in the event posters and website. Then they will have to enter the code to read the story and solve more puzzles
+One caveat, the game had to be available for offline play in future through downloading into a HTML file
+Building the App
+Webpack -&gt; for offline play too, so it had to be 100% local and serverless
+The story is written as a JSON file, with separate nodes that can be traversed.
+Link to the source code of the story
+Problem with serverless: people can read the source code and find the storyline codes
+Cryptography to the rescue
+Using cryptography signing methods, I encrypted the code
+I had to use my own hashing library because offline play = no access to the crypto library in the browser
+Each scene is encrypted by its 6-letter code, then the hashed version of the code is prepended to the encrypted story. From there, the scenes are stored in an array.
+When the user enters the code, the hashed code is checked against each scene line to find the corresponding scene
+Show the built source code
+Conclusion:
+We found the murderer!
+And we’ve thwarted anyone who tried to cheese their way into a solution
+</div>
+<header>
 <h1>Murder Mystery Game</h1>
-<p>
-  How I wrote a text-based game engine with Webpack, custom loaders, and a generous serving of cryptography.
-</p>
-<p>
-  <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="#" target="_blank" rel="noopener noreferrer">Demo</a>
-</p>
+<p>How I wrote a text-based game engine with Webpack, custom loaders, and a generous serving of cryptography.</p>
+<p><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="#" target="_blank" rel="noopener noreferrer">Play the Game</a></p>
 </header>
 <h2>A Victorian Murder Mystery</h2>
 <p>During my free time, I enjoy helping out with event organising. In 2022, there was an online event with a Victorian Murder Mystery theme. As part of the event, they wanted to include a puzzle game that the attendees could play.</p>
 <p>Working with writers and artists, we put together a simple concept: 6-letter codes would be hidden on the event’s website and in the social media platforms. Observant players could solve the puzzles to get the code, then enter it into the game. Each code would unlock a new chapter of the storyline, with more puzzles to solve to uncover clues that would reveal the murderer.</p>
 <p>The 6-letter codes would be hard to find, and the puzzles would range from trivially easy to challenging. We wanted to encourage players to discuss the solutions, and help each other out with hints along the way. Towards the closing of the event, the last 6-letter code would also be revealed, allowing the players to crack the case.</p>
 <p>One additional note: the game would be hosted on the event website, but after the event, it should also be downloadable and playable offline. This would come into play later.</p>
-<p><em>Cue ominous music and foreshadowing</em></p>
+<p><em>Cue ominous music and foreshadowing.</em></p>
 <h2>The Engine</h2>
 <p>As the sole developer of the game engine with only a few weeks to work on this, I had to make this engine simple but powerful. I turned to ol’ reliable: my Webpack boilerplate with React, Typescript, and SCSS.</p>
 <p>The first scene was easy enough: a 6-letter input that would accept valid codes and reject invalid ones.</p>
-<p>[Show video of entering invalid codes and valid codes]</p>
+<p align="center">
+  <video src="./static/code-desktop.mp4" style="width:min(100%, 800px)" preload="auto" muted="" autoplay="" loop="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+</video></p>
 <p>I made sure it worked well on mobile devices too.</p>
-<p>[Show video of entering invalid codes and valid codes on mobile]</p>
+<p align="center">
+  <video src="./static/code-mobile.mp4" style="width:min(100%, 800px)" preload="auto" muted="" autoplay="" loop="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+</video></p>
 <p>That was the easy part. Once the player has entered a code, we render an interactive chapter. Players needed to choose dialogue options and solve puzzles. I decided the best way to handle this is to store the game data in a JSON format.</p>
-<p>Each part of the story would be represented as a node. A <code>text</code> node would render text.</p>
-<p>[code of text node]</p>
-<p>[image of text node]</p>
-<p>An <code>image</code> node would render an image.</p>
-<p>[code of image node]</p>
-<p>[image of image node]</p>
+<p>Each part of the story would be represented as a node. A <code>html</code> node would render HTML.</p>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-json" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;html&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;content&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;&lt;p&gt;This is a HTML node!&lt;/p&gt;&lt;img src=\&quot;image.png\&quot;&gt;&quot;</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span></code></div></pre>
+<p align="center">
+  <img src="./static/html-node.png" style="width:min(100%, 800px)"/>
+</p>
+<p>The HTML renderer also automatically imports images and maps them to the packaged URL. For example, in the above node, the <code>image.png</code> URL is changed to <code>/ab9d827f80c52ae2d928.png</code>, since Webpack packages files with a custom name with a hash.</p>
 <p>Dialogue options would be represented with an <code>options</code> node. When the engine reached an <code>options</code> node, it would render it and wait for the player’s input. Based on their options, it would choose the next node to jump to.</p>
-<p>[video of clicking an option and scrolling down]</p>
+<p align="center">
+  <video src="./static/options.mp4" style="width:min(100%, 400px)" preload="auto" muted="" autoplay="" loop="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+</video></p>
 <p>This functionality created a lot of complexity for the engine. There were 2 features I wanted. FIrst, I wanted players to be able to backtrack through the dialogue options. If they reached a dead end, they should be able to scroll back to a previous option to select it.</p>
-<p>[video of choosing the wrong option, scrolling up, then scrolling back down].</p>
+<p align="center">
+  <video src="./static/options-backtrack-2.mp4" style="width:min(100%, 800px)" preload="auto" muted="" autoplay="" loop="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+</video></p>
 <p>The second feature was to have an internal state. If we’re able to store flags, we can remove dialogue options that were already selected.</p>
 <p>These two features aren’t trivially compatible. If I only wanted the ability to backtrack, then I can simply keep track of:</p>
 <p>The history of nodes rendered
 The current node that the player is at</p>
-<p>[diagram of node history and arrow pointing to the current state]</p>
-<p>If the player selects an earlier option, then I can slice off the history at that point, then continue from there.</p>
-<p>[diagram of slicing off the node history at an earlier option, (diagram 1) then branching down to a new path (diagram 2)]</p>
+<p align="center">
+  <img src="./static/history-backtrack-a1.png" style="width:min(100%, 600px)"/>
+</p>
+<p>If the player selects an earlier option, then I can slice off the history at that point…</p>
+<p align="center">
+  <img src="./static/history-backtrack-a2.png" style="width:min(100%, 600px)"/>
+</p>
+<p>…then follow the new option.</p>
+<p align="center">
+  <img src="./static/history-backtrack-a3.png" style="width:min(100%, 600px)"/>
+</p>
 <p>If I only wanted the ability to have an internal state, then I will need to keep track of:</p>
 <p>The history of nodes rendered
 The current node that the player is at
 A global state</p>
-<p>[diagram of node history, with a box that the current state is on. show how that after selecting an option, we can add a check to the state - split across multiple diagrams]</p>
-<p>Let’s say we want both features, meaning we want players to be able to backtrack while keeping an internal state. Let’s see what happens when a player tries to set a flag and backtracks..</p>
-<p>[diagram of setting flag 1, then backtrack to an earlier state with flag 1 still set]</p>
-<p>In this sequence, the player enters a state where a flag is set before it’s supposed to have been set. Uh oh!</p>
-<p>Thankfully, there is a solution. While keeping track of the nodes, I also keep track of the player state at that particular node. Now, we can backtrack without allowing players to reach an invalid state.</p>
-<p>[diagram of backtracking while allowing states to work]</p>
+<p>For example, consider a game tree that looks like this:</p>
+<p align="center">
+  <img src="./static/history-backtrack-b1.png" style="width:min(100%, 600px)"/>
+</p>
+<p>A player starts the game and reaches node 2.</p>
+<p align="center">
+  <img src="./static/history-backtrack-b2.png" style="width:min(100%, 600px)"/>
+</p>
+<p>They select choice 1.</p>
+<p align="center">
+  <img src="./static/history-backtrack-b3.png" style="width:min(100%, 600px)"/>
+</p>
+<p>Flag 1 is set, and they reach the 4th node where it displays a message based on the flag.</p>
+<p align="center">
+  <img src="./static/history-backtrack-b4.png" style="width:min(100%, 600px)"/>
+</p>
+<p>Let’s say we want both features, meaning we want players to be able to backtrack while keeping an internal state. Let’s see what happens when a player tries to set a flag and backtracks. They step through nodes 1 to 3…</p>
+<p align="center">
+  <img src="./static/history-backtrack-b3.png" style="width:min(100%, 600px)"/>
+</p>
+<p>…but then decides they’d like to go back and pick choice 2 instead.</p>
+<p align="center">
+  <img src="./static/history-backtrack-c4.png" style="width:min(100%, 600px)"/>
+</p>
+<p>Flag 2 is set.</p>
+<p align="center">
+  <img src="./static/history-backtrack-c5.png" style="width:min(100%, 600px)"/>
+</p>
+<p>This time, when they reach the 4th node, both flag 1 and 2 are set, which is supposed to be an invalid state!</p>
+<p align="center">
+  <img src="./static/history-backtrack-c6.png" style="width:min(100%, 600px)"/>
+</p>
+<p>Thankfully, there is a solution. While keeping track of the nodes, I also keep track of the player state at that particular node.</p>
+<p align="center">
+  <img src="./static/history-backtrack-d1.png" style="width:min(100%, 600px)"/>
+</p>
+<p>The player picks choice 1…</p>
+<p align="center">
+  <img src="./static/history-backtrack-d2.png" style="width:min(100%, 600px)"/>
+</p>
+<p>…goes back…</p>
+<p align="center">
+  <img src="./static/history-backtrack-d3.png" style="width:min(100%, 600px)"/>
+</p>
+<p>…and picks choice 2.</p>
+<p align="center">
+  <img src="./static/history-backtrack-d4.png" style="width:min(100%, 600px)"/>
+</p>
+<p>This time, there isn’t an issue because only flag 2 is set. Problem solved!</p>
+<p align="center">
+  <img src="./static/history-backtrack-d5.png" style="width:min(100%, 600px)"/>
+</p>
 <p>From there, I added more node types. There’s a text input node that allows story branching by comparing the input with a string or regex.</p>
-<p>[code of the text input dialogue]</p>
-<p>[video of it in action]</p>
-<p>There’s also an image node that allows users to click on various parts of the image to choose an option.</p>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-json" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;text-input&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;prompt&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;Enter the password&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;responses&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">[</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;check&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;string&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;string&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;PassWord&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;isCaseSensitive&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#f08d49">true</span><span>
+</span><span>            </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;action&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;goto&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;goto&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;success-node&quot;</span><span>
+</span><span>            </span><span class="token token" style="color:#ccc">}</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;check&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;regex&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;regex&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;^password$&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;regexFlags&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;i&quot;</span><span>
+</span><span>            </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;action&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;message&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                </span><span class="token token" style="color:#f8c555">&quot;message&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;You are close, but the password is case sensitive.&quot;</span><span>
+</span><span>            </span><span class="token token" style="color:#ccc">}</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">}</span><span>
+</span><span>    </span><span class="token token" style="color:#ccc">]</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;fallthroughResponse&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;Incorrect.&quot;</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span></code></div></pre>
+<p align="center">
+  <video src="./static/text-node.mp4" style="width:min(100%, 800px)" preload="auto" muted="" autoplay="" loop="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+</video></p>
+<p>There’s also an image node that allows users to click on various parts of the image to choose an option. First, we need a map of where the clickable areas are.</p>
+<p align="center">
+  <img src="./static/click-image-node-map.png" style="width:min(100%, 500px);border:1px solid white"/>
+</p>
+<p>After that, we specify the actions to perform when the player clicks on each respective colour.</p>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-json" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;click-image-input&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;prompt&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;Click to investigate&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;image&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;image.png&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;clickMap&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;image-click-map.png&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;clickActions&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>        </span><span class="token token" style="color:#f8c555">&quot;#00ff00&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;goto&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;goto&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;click-dragon&quot;</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>        </span><span class="token token" style="color:#f8c555">&quot;#0000ff&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;goto&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;goto&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;click-dragon&quot;</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>        </span><span class="token token" style="color:#f8c555">&quot;#ffff00&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;goto&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;goto&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;click-backpack&quot;</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>        </span><span class="token token" style="color:#f8c555">&quot;#ff0000&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;message&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;message&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;“Hey, sweety!”&quot;</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>        </span><span class="token token" style="color:#f8c555">&quot;#00ffff&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;message&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>            </span><span class="token token" style="color:#f8c555">&quot;message&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;!&quot;</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">}</span><span>
+</span><span>    </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;fallthroughResponse&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;Nothing here…&quot;</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span></code></div></pre>
+<p align="center">
+  <video src="./static/click-image-node.mp4" style="width:min(100%, 800px)" preload="auto" muted="" autoplay="" loop="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+</video></p>
+<p>And a penalty node to discourage players from brute-forcing the answer.</p>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-json" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;type&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;penalty-kick-to-start&quot;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;delay&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#f08d49">5000</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;content&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&quot;Incorrect.&quot;</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span></code></div></pre>
+<p align="center">
+  <video src="./static/penalty-node.mp4" style="width:min(100%, 800px)" preload="auto" muted="" autoplay="" loop="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+</video></p>
 <p>Now, we can code the story in the JSON format and we’re good to go! Or are we?</p>
 <h2>A Gaping Flaw</h2>
 <p>Remember when I said we needed the game to be playable offline? That meant that we couldn’t rely on a server to check if the 6-letter codes were valid. All the information had to be stored on the frontend: codes, storyline, and all.</p>
 <p>That meant if a tech-savvy player dug around in the source, they would quickly find all the 6-letter codes as well as the entire storyline. If they wanted to, they could also spoil the ending even before we released the final chapter. Not cool.</p>
 <p>Thankfully, my inner nerd came to the rescue. Over the years, I’ve dug into cryptography concepts and familiarised myself with concepts such as encryption and digital signatures. This would be helpful.</p>
-<h3>A Simple Way</h3>
-<p>A naive solution would be to serialise every chapter’s JSON into a string and encrypt it with the 6-letter code as the key. When a user enters the code, the engine would attempt to decrypt all the chapters. If any of the chapters was successfully decrypted, then it meant that it was a valid code. Otherwise, we reject it.</p>
-<p>[diagram of encryption -&gt; show each chapter being encrypted with a diff key each]</p>
-<p>[diagram of decryption -&gt; show a code entered, then unlocking the valid chapter]</p>
-<p>Is it secure? Yes. But it’s also very slow. Each chapter can reach lengths of up to [XXX characters]. It would be very computationally intensive to attempt to decrypt the entire story’s worth of chapters each time the user enters a 6-letter code.</p>
+<h3>A Naive Solution</h3>
+<p>The simple approach would be to serialise every chapter’s JSON into a string and encrypt it with the 6-letter code as the key. All the encrypted strings are then stored in an array.</p>
+<p align="center">
+  <img src="./static/encryption-1.png" style="width:min(100%, 800px)"/>
+</p>
+<p>When a user enters the code, the engine would attempt to decrypt all the chapters. If any of the chapters was successfully decrypted, then it meant that it was a valid code and we let the player access it. Otherwise, we reject it.</p>
+<p align="center">
+  <img src="./static/encryption-2.png" style="width:min(100%, 800px)"/>
+</p>
+<p>Is it secure? Yes. But it’s also very slow. Each chapter can reach lengths of up to 34,000 characters once serialised. It would be very computationally intensive to attempt to decrypt the entire story’s worth of chapters each time the user enters a 6-letter code, even if an incorrect code was entered.</p>
 <p>Can we do better?</p>
 <h3>A Better Way</h3>
-<p>It turns out that we don’t need to decrypt the entire string. Let’s assume we have the encrypted chapter as a string. If we hash the 6-letter code and pair it with the encrypted chapter, we only need to compare the hash to ensure that the chapter is a match. Only then do we take the time to decrypt the chapter.</p>
-<p>One more issue is that because the game has to be viewable offline, it needs to also work in a local file context. This means that the browser’s crypto API is not always available. We’ll need to implement an encryption and decryption function ourselves (uh-oh), and ideally keep it simple (double uh-oh). Thankfully, since we aren’t dealing with sensitive data, we can get away with this. Yay1</p>
-<p>I implemented a simple [name of hashing and encryption function]. [explain how it all works]</p>
-<p>This method was inspired by how digital signatures work. by pairing [blah blah blah]</p>
+<p>It turns out that we don’t need to decrypt the entire string. Instead of only storing the encrypted chapter, we can hash the 6-letter code and prepend it to the start of the encrypted chapter.</p>
+<p align="center">
+  <img src="./static/encryption-3.png" style="width:min(100%, 800px)"/>
+</p>
+<p>When the player enters a code, we hash it and compare it to all the hashed codes. We only need to attempt to decrypt the chapter whose hash matches.</p>
+<p align="center">
+  <img src="./static/encryption-4.png" style="width:min(100%, 800px)"/>
+</p>
+<p>This looks good! But now we have one more issue: because the game has to be viewable offline, it needs to also work in a local file context. This means that the browser’s crypto API is not always available. We’ll need to implement an encryption and decryption function ourselves (uh-oh), and ideally keep it simple (double uh-oh). Thankfully, since we aren’t dealing with sensitive data, we can get away with this. Yay!</p>
+<p>I implemented a simple hash function to move the bits around:</p>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-typescript" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token" style="color:#cc99cd">function</span><span> </span><span class="token token" style="color:#f08d49">hash</span><span class="token token" style="color:#ccc">(</span><span>str</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#cc99cd">string</span><span class="token token" style="color:#ccc">)</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token" style="color:#cc99cd">let</span><span> hash </span><span class="token token" style="color:#67cdcc">=</span><span> </span><span class="token token" style="color:#f08d49">0</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span>    </span><span class="token token" style="color:#cc99cd">const</span><span> strBytes </span><span class="token token" style="color:#67cdcc">=</span><span> </span><span class="token token" style="color:#f08d49">stringToBytes</span><span class="token token" style="color:#ccc">(</span><span>str</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span>    </span><span class="token token control-flow" style="color:#cc99cd">for</span><span> </span><span class="token token" style="color:#ccc">(</span><span class="token token" style="color:#cc99cd">let</span><span> i </span><span class="token token" style="color:#67cdcc">=</span><span> </span><span class="token token" style="color:#f08d49">0</span><span class="token token" style="color:#ccc">;</span><span> i </span><span class="token token" style="color:#67cdcc">&lt;</span><span> strBytes</span><span class="token token" style="color:#ccc">.</span><span class="token token property-access">length</span><span class="token token" style="color:#ccc">;</span><span> i</span><span class="token token" style="color:#67cdcc">++</span><span class="token token" style="color:#ccc">)</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>        hash </span><span class="token token" style="color:#67cdcc">=</span><span> </span><span class="token token" style="color:#ccc">(</span><span>hash </span><span class="token token" style="color:#67cdcc">&lt;&lt;</span><span> </span><span class="token token" style="color:#f08d49">5</span><span class="token token" style="color:#ccc">)</span><span> </span><span class="token token" style="color:#67cdcc">-</span><span> hash </span><span class="token token" style="color:#67cdcc">+</span><span> strBytes</span><span class="token token" style="color:#ccc">[</span><span>i</span><span class="token token" style="color:#ccc">]</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span>        hash </span><span class="token token" style="color:#67cdcc">|=</span><span> </span><span class="token token" style="color:#f08d49">0</span><span class="token token" style="color:#ccc">;</span><span> </span><span class="token token" style="color:#999">// Convert to 32-bit integer</span><span>
+</span><span>    </span><span class="token token" style="color:#ccc">}</span><span>
+</span><span>    hash </span><span class="token token" style="color:#67cdcc">^=</span><span> </span><span class="token token" style="color:#f08d49">1249284</span><span class="token token" style="color:#ccc">;</span><span> </span><span class="token token" style="color:#999">// Just to mess some bits around</span><span>
+</span><span>    </span><span class="token token control-flow" style="color:#cc99cd">return</span><span> hash</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span></code></div></pre>
+<p>The encryption function is an XOR cipher that uses the 6-letter code as the key.</p>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-typescript" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token" style="color:#cc99cd">function</span><span> </span><span class="token token" style="color:#f08d49">xorBytesWithKey</span><span class="token token" style="color:#ccc">(</span><span>bytes</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#cc99cd">number</span><span class="token token" style="color:#ccc">[</span><span class="token token" style="color:#ccc">]</span><span class="token token" style="color:#ccc">,</span><span> keyBytes</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#cc99cd">number</span><span class="token token" style="color:#ccc">[</span><span class="token token" style="color:#ccc">]</span><span class="token token" style="color:#ccc">)</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token control-flow" style="color:#cc99cd">return</span><span> bytes</span><span class="token token" style="color:#ccc">.</span><span class="token token method property-access" style="color:#f08d49">map</span><span class="token token" style="color:#ccc">(</span><span class="token token" style="color:#ccc">(</span><span>byte</span><span class="token token" style="color:#ccc">,</span><span> i</span><span class="token token" style="color:#ccc">)</span><span> </span><span class="token token arrow" style="color:#67cdcc">=&gt;</span><span> byte </span><span class="token token" style="color:#67cdcc">^</span><span> keyBytes</span><span class="token token" style="color:#ccc">[</span><span>i </span><span class="token token" style="color:#67cdcc">%</span><span> keyBytes</span><span class="token token" style="color:#ccc">.</span><span class="token token property-access">length</span><span class="token token" style="color:#ccc">]</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span></code></div></pre>
+<p>This method was inspired by how digital signatures work, where the hash of the document is encrypted with a private key and attached to the original document as the signature. The verifier can compare the hash of the document to the signature decrypted with the public key to ensure that the signature is valid. In our use case, we’re pairing the hash of the passcode (to verify a match) with the original document (encrypted by the passcode). Neither the passcode nor the original document is revealed to a potential attacker.</p>
 <p>The result is an array of encrypted strings with a prepended hash, each one representing a serialised chapter JSON.</p>
 <p>But does it work?</p>
-<p>Yup! I sent this to a friend who works in digital security to crack. He pored over the minified code and eventually found the cryptography functions and encrypted strings. When he realised there was no way to cheat the system, he conceded defeat. He did, however, leave me with the following statement: “But you do realise it’s easy for me to brute-force all 6-letter combinations if I wanted to, right?”</p>
+<p>Yes! I sent this to a friend who works in digital security to crack. He pored over the minified code and eventually found the cryptography functions and encrypted strings. When he realised there was no way to cheat the system without knowing the 6-letter codes, he conceded defeat. He did, however, leave me with the following statement: “But you do realise it’s easy for me to brute-force all 6-letter combinations if I wanted to, right?”</p>
 <p>Fine, you win Jason. But hey, if we wanted the data to be secure, we would be asking for 128-bit keys rather than 6-letter codes (which amount to just above 28 bits). The idea isn’t to make the code uncrackable, it’s to make it more difficult than actually solving the puzzles.</p>
 <p>With that, we’re done with the encryption. Now, whenever we write a chapter, all we have to do is to encrypt it, prepend the hash of its 6-letter code, then add it to the array. Easy, right? Most definitely not!</p>
 <h2>Webpack to the Rescue</h2>
 <p>The best way to get me to code is to present me with a mind-numbingly banal task, because I’ll write a script to automate the heck out of it.</p>
 <p>Thankfully, Webpack allows us to write custom loaders. I added a filter to take in JSON files with the <code>.puzzle.json</code> extension, and convert it into the encrypted array of strings.</p>
-<p>[code of the filter from webpack config]</p>
-<p>[code of the custom loader]</p>
+<p>webpack.config</p>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-javascript" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>module</span><span class="token token" style="color:#ccc">.</span><span class="token token property-access">exports</span><span> </span><span class="token token" style="color:#67cdcc">=</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token spread" style="color:#67cdcc">...</span><span>
+</span><span>    </span><span class="token token literal-property" style="color:#f8c555">module</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>        </span><span class="token token literal-property" style="color:#f8c555">rules</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>            </span><span class="token token spread" style="color:#67cdcc">...</span><span>
+</span><span>            </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>                </span><span class="token token literal-property" style="color:#f8c555">test</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token regex-delimiter" style="color:#7ec699">/</span><span class="token token regex-source language-regex" style="color:#7ec699">\.puzzle.json$</span><span class="token token regex-delimiter" style="color:#7ec699">/</span><span class="token token regex-flags" style="color:#7ec699">i</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                </span><span class="token token literal-property" style="color:#f8c555">type</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&#x27;javascript/auto&#x27;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                </span><span class="token token literal-property" style="color:#f8c555">use</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#ccc">[</span><span>
+</span><span>                    </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>                        </span><span class="token token literal-property" style="color:#f8c555">loader</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token" style="color:#7ec699">&#x27;json-loader&#x27;</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                    </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                    </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>                        </span><span class="token token literal-property" style="color:#f8c555">loader</span><span class="token token" style="color:#67cdcc">:</span><span> path</span><span class="token token" style="color:#ccc">.</span><span class="token token method property-access" style="color:#f08d49">resolve</span><span class="token token" style="color:#ccc">(</span><span class="token token" style="color:#7ec699">&#x27;loaders/puzzle-json.js&#x27;</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                    </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>                </span><span class="token token" style="color:#ccc">]</span><span class="token token" style="color:#ccc">,</span><span>
+</span><span>            </span><span class="token token" style="color:#ccc">}</span><span>
+</span><span>        </span><span class="token token" style="color:#ccc">}</span><span>
+</span><span>    </span><span class="token token" style="color:#ccc">}</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span></code></div></pre>
+<p>loaders/puzzle-json.ts</p>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-javascript" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token module" style="color:#cc99cd">import</span><span> </span><span class="token token imports" style="color:#ccc">{</span><span class="token token imports"> encodeSecretString </span><span class="token token imports" style="color:#ccc">}</span><span> </span><span class="token token module" style="color:#cc99cd">from</span><span> </span><span class="token token" style="color:#7ec699">&#x27;../puzzle-crypto&#x27;</span><span class="token token" style="color:#ccc">;</span><span>
+</span>
+<span>type </span><span class="token token maybe-class-name">PuzzleJson</span><span> </span><span class="token token" style="color:#67cdcc">=</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token" style="color:#ccc">[</span><span>passcode</span><span class="token token" style="color:#67cdcc">:</span><span> string</span><span class="token token" style="color:#ccc">]</span><span class="token token" style="color:#67cdcc">:</span><span> </span><span class="token token maybe-class-name">PuzzleData</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span><span>
+</span>
+<span></span><span class="token token" style="color:#cc99cd">function</span><span> </span><span class="token token" style="color:#f08d49">puzzleJsonLoader</span><span class="token token" style="color:#ccc">(</span><span class="token token parameter literal-property" style="color:#f8c555">source</span><span class="token token parameter" style="color:#67cdcc">:</span><span class="token token parameter"> string</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#67cdcc">:</span><span> string </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token" style="color:#999">// `source` is the loaded string of the puzzle JSON file</span><span>
+</span><span>    </span><span class="token token" style="color:#cc99cd">const</span><span> puzzleJson </span><span class="token token" style="color:#67cdcc">=</span><span> </span><span class="token token known-class-name" style="color:#f8c555">JSON</span><span class="token token" style="color:#ccc">.</span><span class="token token method property-access" style="color:#f08d49">parse</span><span class="token token" style="color:#ccc">(</span><span>source</span><span class="token token" style="color:#ccc">)</span><span> </span><span class="token token module" style="color:#cc99cd">as</span><span> </span><span class="token token maybe-class-name">PuzzleJson</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span>    </span><span class="token token" style="color:#cc99cd">const</span><span> transformedPuzzleJson </span><span class="token token" style="color:#67cdcc">=</span><span> </span><span class="token token" style="color:#f08d49">transformPuzzleJson</span><span class="token token" style="color:#ccc">(</span><span>puzzleJson</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span>    </span><span class="token token" style="color:#cc99cd">const</span><span> transformedSource </span><span class="token token" style="color:#67cdcc">=</span><span> </span><span class="token token known-class-name" style="color:#f8c555">JSON</span><span class="token token" style="color:#ccc">.</span><span class="token token method property-access" style="color:#f08d49">stringify</span><span class="token token" style="color:#ccc">(</span><span>transformedPuzzleJson</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span>    </span><span class="token token control-flow" style="color:#cc99cd">return</span><span> transformedSource</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span><span>
+</span>
+<span></span><span class="token token" style="color:#cc99cd">function</span><span> </span><span class="token token" style="color:#f08d49">transformPuzzleJson</span><span class="token token" style="color:#ccc">(</span><span class="token token parameter literal-property" style="color:#f8c555">puzzleJson</span><span class="token token parameter" style="color:#67cdcc">:</span><span class="token token parameter"> </span><span class="token token parameter maybe-class-name">PuzzleJson</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#67cdcc">:</span><span> string</span><span class="token token" style="color:#ccc">[</span><span class="token token" style="color:#ccc">]</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>    </span><span class="token token control-flow" style="color:#cc99cd">return</span><span> </span><span class="token token known-class-name" style="color:#f8c555">Object</span><span class="token token" style="color:#ccc">.</span><span class="token token method property-access" style="color:#f08d49">keys</span><span class="token token" style="color:#ccc">(</span><span>puzzleJson</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#ccc">.</span><span class="token token method property-access" style="color:#f08d49">map</span><span class="token token" style="color:#ccc">(</span><span class="token token" style="color:#ccc">(</span><span class="token token parameter">passcode</span><span class="token token" style="color:#ccc">)</span><span> </span><span class="token token arrow" style="color:#67cdcc">=&gt;</span><span> </span><span class="token token" style="color:#ccc">{</span><span>
+</span><span>        </span><span class="token token" style="color:#cc99cd">const</span><span> puzzleData </span><span class="token token" style="color:#67cdcc">=</span><span> puzzleJson</span><span class="token token" style="color:#ccc">[</span><span>passcode</span><span class="token token" style="color:#ccc">]</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span>        </span><span class="token token control-flow" style="color:#cc99cd">return</span><span> </span><span class="token token" style="color:#f08d49">encodeSecretString</span><span class="token token" style="color:#ccc">(</span><span>passcode</span><span class="token token" style="color:#ccc">,</span><span> puzzleData</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span>    </span><span class="token token" style="color:#ccc">}</span><span class="token token" style="color:#ccc">)</span><span class="token token" style="color:#ccc">;</span><span>
+</span><span></span><span class="token token" style="color:#ccc">}</span><span>
+</span>
+<span>module</span><span class="token token" style="color:#ccc">.</span><span class="token token property-access">exports</span><span> </span><span class="token token" style="color:#67cdcc">=</span><span> puzzleJsonLoader</span><span class="token token" style="color:#ccc">;</span></code></div></pre>
 <p>So the input file may look something like this:</p>
-<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-JSON" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>{ 
-</span>“LITTLE”: &lt;story json&gt;
-<!-- -->“ISLAND”: &lt;story json&gt;
-<!-- -->…
-<!-- -->}</code></div></pre>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-json" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token" style="color:#ccc">{</span><span> 
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;LITTLE&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> &lt;story json&gt;
+</span><span>    </span><span class="token token" style="color:#f8c555">&quot;ISLAND&quot;</span><span class="token token" style="color:#67cdcc">:</span><span> &lt;story json&gt;
+</span>    …
+<span></span><span class="token token" style="color:#ccc">}</span></code></div></pre>
 <p>And the encrypted result looks like this:</p>
-<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-JSON" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>[“ASFASHFLKSFHA”...]</span></code></div></pre>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-JSON" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>[
+</span>    &quot;8pJavgF0sHAA0XGCcbEAlHVlhYVgIKCAw...&quot;,
+<!-- -->    &quot;EeqguQElEfFQ8WHT0DBQtGU0JAQwALDRY...&quot;,
+<!-- -->    ...
+<!-- -->]</code></div></pre>
 <p>All I have to do is import it in the code as such:</p>
-<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-javascript" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token module" style="color:#cc99cd">import</span><span> blah blah </span><span class="token token module" style="color:#cc99cd">from</span><span> “</span><span class="token token" style="color:#ccc">.</span><span class="token token" style="color:#ccc">.</span><span class="token token" style="color:#67cdcc">/</span><span>data</span><span class="token token" style="color:#ccc">.</span><span class="token token property-access">puzzle</span><span class="token token" style="color:#ccc">.</span><span class="token token property-access">json”</span></code></div></pre>
-<p>And Webpack does everything for me. It’s a lifesaver during the development process, since I could edit the JSON in development mode, and have it refresh instantly. Bamm!</p>
+<pre><div style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto"><code class="language-javascript" style="color:#ccc;background:#12171e;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span class="token token module" style="color:#cc99cd">import</span><span> </span><span class="token token imports maybe-class-name">Puzzle</span><span> </span><span class="token token module" style="color:#cc99cd">from</span><span> </span><span class="token token" style="color:#7ec699">&#x27;../data.puzzle.json&#x27;</span><span class="token token" style="color:#ccc">;</span></code></div></pre>
+<p>And Webpack does everything for me. It’s a lifesaver during the development process, since I could edit the JSON in development mode, and have it refresh instantly. Easy!</p>
 <h2>Case Closed</h2>
 <p>The game engine was deployed to the website along with the encrypted story, and the event’s attendees got to cracking the case. By the time the event came to a close, the attendees have solved the murder mystery, and our detectives ride their horse-drawn carriage into the sunset.</p>
-<p>And while we may enjoy a happy ending, the true treasure was the programming concepts we learnt along the way.</p></div></section></main></div></div><footer class="footer_footer__6AImX"><div class="footer_footerContent__shqlb">Designed and built from scratch by @Kenneth-LJS with NextJS and SCSS!</div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/article/murder-mystery-game","query":{},"buildId":"QSBPdznC8CrgShdU3M-nm","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
+<p>And while we may enjoy a happy ending, the true treasure was the programming concepts we learnt along the way.</p>
+<p>If you’d like to take a crack at solving this mystery, you can check it out <a href="/project/victorian-murder-mystery/" target="_blank" rel="noopener noreferrer">here</a>! The 6-letter codes are listed below:</p>
+<ul>
+<li>Chapter 1: LISTEN</li>
+<li>Chapter 2: MINION</li>
+<li>Chapter 3: SILENT</li>
+<li>Chapter 4: SENSES</li>
+<li>Chapter 5: SWORDS</li>
+<li>Chapter 6: LITTLE, ISLAND, FURCON</li>
+<li>Chapter 7: FACADE</li>
+<li>Chapter 8: NOVELS</li>
+<li>Chapter 9: TREPID</li>
+<li>Chapter 10: COFFEE, ACCESS, FIASCO</li>
+<li>Chapter 11: ESCAPE</li>
+<li>Chapter 12: JACKAL</li>
+<li>Chapter 13: VOODOO</li>
+<li>Chapter 14: NUANCE</li>
+<li>Chapter 15: SAFARI</li>
+<li>Chapter 16: FINALE</li>
+</ul>
+<p>Happy cracking!</p></div></section></main></div></div><footer class="footer_footer__6AImX"><div class="footer_footerContent__shqlb">Designed and built from scratch by @Kenneth-LJS with NextJS and SCSS!</div></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/article/murder-mystery-game","query":{},"buildId":"B-92oPAs8Y46_vTrF3Khs","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
