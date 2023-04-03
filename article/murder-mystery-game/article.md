@@ -4,7 +4,7 @@
 
 <p>How I wrote a text-based game engine with Webpack, custom loaders, and a generous serving of cryptography.</p>
 
-<p><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="/project/victorian-murder-mystery/" target="_blank" rel="noopener noreferrer">Play the Game</a></p>
+<p><a href="https://github.com/Kenneth-LJS/Murder-Mystery-Game" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="/project/victorian-murder-mystery/" target="_blank" rel="noopener noreferrer">Play the Game</a></p>
 
 </header>
 

@@ -3,7 +3,7 @@
 
 <p>Why I wrote a TamperMonkey script for mindful browsing</p>
 
-<p><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+<p><a href="https://github.com/Kenneth-LJS/Focus-Shepherd" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://github.com/Kenneth-LJS/Focus-Shepherd/raw/main/focus-shepherd.user.js" target="_blank" rel="noopener noreferrer">Install</a></p>
 
 </header>
 
@@ -13,7 +13,7 @@ I’m an easily-distractible person. Whenever I’m bored, my fingers instinctiv
 
 Am I to blame for the hours of unproductivity? Yes, but only to a certain extent. The thing is, websites profit off your attention. When you watch an advertisement on their platform, they make money, and so they are incentivised to keep you endlessly scrolling to the next social media post, automatically showing you the next video on your feed, or filling in yet another “What’s Your Spirit Animal?” quiz.
 
-Companies use psychological tactics to keep you coming back, whether consciously or otherwise. After reading “Hooked” by Nir Eyal[url], I learnt a lot about how these platforms and apps are fighting for our attention.
+Companies use psychological tactics to keep you coming back, whether consciously or otherwise. After reading [“Hooked” by Nir Eyal](https://www.goodreads.com/en/book/show/22668729), I learnt a lot about how these platforms and apps are fighting for our attention.
 
 It’s scary, really, how subconscious it’s become. A 1-minute trip to the washroom is accompanied by a quick scroll on Facebook. The moment we’re waiting at the bus stop or train station, out comes Twitter before we’re even aware of what we’re doing. Just to get a feel of how powerful these impulses are, just for one day, switch up the positions of your social media apps on your phone. Watch how your fingers automatically tap on where the app used to be, the moment you’re looking for that temporary stimulation.
 
@@ -62,8 +62,8 @@ I’m a bit of a workaholic. After a long day of work, nothing beats coming back
 
 Let’s be more careful about where our attention is being drawn to, and practise mindfulness!
 
-You can download the script <a href="#" target="_blank" rel="noopener noreferrer">here</a>.
+You can install the script <a href="https://github.com/Kenneth-LJS/Focus-Shepherd" target="_blank" rel="noopener noreferrer">here</a>.
 
-## But Wait!
+## Bonus!
 
-I also wrote another TamperMonkey script to stop me from endlessly surfing videos on YouTube shorts. This script redirects URLs of this format: `https://www.youtube.com/shorts/gpPLgS7ZdLQ` into this format: `https://www.youtube.com/watch?v=gpPLgS7ZdLQ`. No more autoplaying videos for hours! Download it <a href="#" target="_blank" rel="noopener noreferrer">here</a>.
+I also wrote another TamperMonkey script to stop me from endlessly surfing videos on YouTube shorts. No more autoplaying videos for hours! Download it <a href="https://github.com/Kenneth-LJS/No-YT-Shorts" target="_blank" rel="noopener noreferrer">here</a>.
