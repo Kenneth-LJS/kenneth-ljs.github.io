@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <a href="[#](https://github.com/Kenneth-LJS/domsi)" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="[#](https://www.npmjs.com/package/domsi)" target="_blank" rel="noopener noreferrer">NPM</a> | <a href="/static/kiwi-chirp/" target="_blank" rel="noopener noreferrer">Demo</a>
+  <a href="https://github.com/Kenneth-LJS/domsi" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://www.npmjs.com/package/domsi" target="_blank" rel="noopener noreferrer">NPM</a> | <a href="/static/kiwi-chirp/" target="_blank" rel="noopener noreferrer">Demo</a>
 </p>
 
 </header>
