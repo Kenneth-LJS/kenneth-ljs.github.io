@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="#" target="_blank" rel="noopener noreferrer">Demo</a>
+  <a href="[#](https://github.com/Kenneth-LJS/domsi)" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="[#](https://www.npmjs.com/package/domsi)" target="_blank" rel="noopener noreferrer">NPM</a> | <a href="/static/kiwi-chirp/" target="_blank" rel="noopener noreferrer">Demo</a>
 </p>
 
 </header>
@@ -377,7 +377,9 @@ And that’s it, we’re done! To recap, we’ve taken a non-trivial problem and
 
 ## The Power of Domsi
 
-Let’s see how this is better than conventional web scraping methods.
+Since Domsi is compiled into pure JavaScript, it can be run on any automated browser of choice, from Puppeteer in Node.js to Selenium in Python. No need to code a Python version of Domsi for data collection!
+
+As for the selector itself, let’s see how it fares against conventional web scraping methods.
 
 Firstly, Domsi selectors have a powerful hierarchy structure built into them. The nested queries allow for complex HTML structures to be easily found without having to rely on Javascript-based filters which may be buggy.
 
@@ -387,7 +389,7 @@ Thirdly, Domsi selectors do not rely on parent/child node navigation. If the web
 
 Fourthly, the query is self-documenting. Unlike horribly nested parent/child traversals and arbitrary property checks, Domsi queries allow you to label each node with an easy-to-understand selector. This makes development and maintenance much easier. No more tweaking xpaths and selectors! No more throwing out old scraping codes because the monolith of a function no longer works!
 
-And that’s not all! There are a lot more subtle features such as the `and` and `or` selectors. Also, when comparing colors, the color selector converts hex values and rgb values under the hood, saving yourself the unnecessary conversion headache. Check out the documentation for more info!
+And that’s not all! There are a lot more features I havent’ mentioned yet such as the `and` and `or` selectors. Also, when comparing colors, the color selector converts hex values and rgb values under the hood, saving yourself the unnecessary conversion headache. Check out the documentation for more info!
 
 ## But How Fast Is It?
 
