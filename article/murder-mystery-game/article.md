@@ -422,7 +422,7 @@ So the input file may look something like this:
 
 And the encrypted result looks like this:
 
-```JSON
+```json
 [
     "8pJavgF0sHAA0XGCcbEAlHVlhYVgIKCAw...",
     "EeqguQElEfFQ8WHT0DBQtGU0JAQwALDRY...",
