@@ -112,6 +112,8 @@ async def console_counter():
         counter += 1
 ```
 
+Then we set up the script to run the coroutine asynchronously.
+
 ```python
 import asyncio
 
@@ -286,7 +288,7 @@ While researching a less-janky solution, I stumbled across the “curses” libr
 > pip install windows-curses
 ```
 
-(Sorry, Mac and Unix users 😛)
+(Sorry, Mac and Unix users, it only works on Windows 😛)
 
 After some experimentation, it turns out that the curses library is very low-level. For instance, this is how you’d print “Hello World”.
 
@@ -392,6 +394,13 @@ console.logs.append('Log 1')
 console.logs.append('Log 2')
 console.logs = ['Log 3', 'Log 4']
 console.logs.append('Log 5')
+```
+
+The output:
+
+```shell
+Update: ['Log 1']
+Update: ['Log 1', 'Log 2']
 ```
 
 Huh, what happened here? It turns out that when we ran `console.logs = ['Log 3', 'Log 4']`, we replaced `console.logs` with a regular list rather than a wrapped one. We could force users to do something like this:
@@ -500,7 +509,7 @@ with open('filename.txt') as f:
     f.read()
 ```
 
-Python once again comes to the rescue. By defining the `__start__` and `__end__` functions, we can achieve the same functionality.
+Python once again comes to the rescue. By defining the `__enter__` and `__exit__` functions, we can achieve the same functionality.
 
 ```python
 class SnapConsole:

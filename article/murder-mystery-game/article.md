@@ -416,7 +416,7 @@ So the input file may look something like this:
 { 
     "LITTLE": <story json>
     "ISLAND": <story json>
-    …
+    ...
 }
 ```
 
