@@ -1,16 +1,3 @@
-<div style="display: none;">
-Outline:
-Motivation
-Controlling exact printouts is hard in normal Python prints
-I wanted a high-level library to wrap the curses library
-Features
-List features
-Download from?
-
-to record screens: open terminal, ctrl + + 4 times and screenshot the renders
-
-https://pypi.org/project/snap-console/
-</div>
 <header>
 
 <h1>Snap Console</h1>

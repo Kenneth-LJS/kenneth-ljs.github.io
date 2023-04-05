@@ -1,19 +1,19 @@
 <header>
 <h1>Focus Shepherd</h1>
 
-<p>Why I wrote a TamperMonkey script for mindful browsing</p>
+<p>Why I wrote a TamperMonkey script for mindful internet browsing</p>
 
-<p><a href="https://github.com/Kenneth-LJS/Focus-Shepherd" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://github.com/Kenneth-LJS/Focus-Shepherd/raw/main/focus-shepherd.user.js" target="_blank" rel="noopener noreferrer">Install</a></p>
+<p><a href="https://github.com/Kenneth-LJS/Focus-Shepherd" target="_blank" rel="noopener noreferrer">GitHub</a> | <p><a href="https://github.com/Kenneth-LJS/Focus-Shepherd/raw/main/focus-shepherd.user.js" target="_blank" rel="noopener noreferrer">Install</a>
 
 </header>
 
 ## Attention Please!
 
-I’m an easily-distractible person. Whenever I’m bored, my fingers instinctively open a new browser tab with `ctrl-T` and type in the URL to social media platforms. Before I’m even aware of what I’m doing, I find myself face to face with a deluge of visual and mental stimulation, taking up my time and attention for the next few hours.
+I’m an easily-distracted person. Whenever I’m bored, my fingers instinctively open a new browser tab with `ctrl-T` and type in the URL to social media platforms. Before I’m even aware of what I’m doing, I find myself face to face with a deluge of visual and mental stimulation, taking up my time and attention for the next few hours.
 
 Am I to blame for the hours of unproductivity? Yes, but only to a certain extent. The thing is, websites profit off your attention. When you watch an advertisement on their platform, they make money, and so they are incentivised to keep you endlessly scrolling to the next social media post, automatically showing you the next video on your feed, or filling in yet another “What’s Your Spirit Animal?” quiz.
 
-Companies use psychological tactics to keep you coming back, whether consciously or otherwise. After reading [“Hooked” by Nir Eyal](https://www.goodreads.com/en/book/show/22668729), I learnt a lot about how these platforms and apps are fighting for our attention.
+Companies use psychological tactics to keep you coming back, whether consciously or otherwise. After reading “Hooked” by Nir Eyal[url], I learnt a lot about how these platforms and apps are fighting for our attention.
 
 It’s scary, really, how subconscious it’s become. A 1-minute trip to the washroom is accompanied by a quick scroll on Facebook. The moment we’re waiting at the bus stop or train station, out comes Twitter before we’re even aware of what we’re doing. Just to get a feel of how powerful these impulses are, just for one day, switch up the positions of your social media apps on your phone. Watch how your fingers automatically tap on where the app used to be, the moment you’re looking for that temporary stimulation.
 
@@ -60,9 +60,7 @@ This doesn’t happen with Focus Shepherd. Instead, the screen is overlaid over 
 
 I’m a bit of a workaholic. After a long day of work, nothing beats coming back home to indulge myself in a fulfilling time of building personal projects. Focus is important to me, and Focus Shepherd has done a good job of bringing my attention back to where it needs to be. On the days that I don’t feel up for an after-work grind, Focus Shepherd lets me say no, allowing me to spend the rest of the night watching some YouTube videos. When this happens, there’s no fretting about an unproductive night, because the distraction is a conscious decision for rest.
 
-Let’s be more careful about where our attention is being drawn to, and practise mindfulness!
-
-You can install the script <a href="https://github.com/Kenneth-LJS/Focus-Shepherd" target="_blank" rel="noopener noreferrer">here</a>.
+If you want, you can install Focus Shepherd <a href="https://github.com/Kenneth-LJS/Focus-Shepherd" target="_blank" rel="noopener noreferrer">here</a>, or view the source code <a href="https://github.com/Kenneth-LJS/Focus-Shepherd" target="_blank" rel="noopener noreferrer">here</a>. Let’s be more careful about where our attention is being drawn to, and practise mindfulness!
 
 ## Bonus!
 
