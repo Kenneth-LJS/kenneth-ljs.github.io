@@ -1,5 +1,3 @@
-<header>
-
 <h1>Murder Mystery Game</h1>
 
 <p>How I wrote a text-based game engine with Webpack, custom loaders, and a generous serving of cryptography.</p>
@@ -216,7 +214,7 @@ There’s also an image node that allows users to click on various parts of the 
   <img src="./static/click-image-node-map.png" style="width: min(100%, 500px); border: 1px solid white;">
 </p>
 
-After that, we specify the actions to perform when the player clicks on each respective colour.
+After that, we specify the actions to perform when the player clicks on each colour.
 
 ```json
 {
@@ -301,7 +299,7 @@ Can we do better?
 
 ### A Better Way
 
-It turns out that we don’t need to decrypt the entire string. Instead of only storing the encrypted chapter, we can hash the 6-letter code and prepend it to the start of the encrypted chapter.
+It turns out we don’t need to decrypt the entire string. Instead of only storing the encrypted chapter, we can hash the 6-letter code and prepend it to the start of the encrypted chapter.
 
 
 <p align=center>
@@ -422,7 +420,7 @@ So the input file may look something like this:
 
 And the encrypted result looks like this:
 
-```json
+```JSON
 [
     "8pJavgF0sHAA0XGCcbEAlHVlhYVgIKCAw...",
     "EeqguQElEfFQ8WHT0DBQtGU0JAQwALDRY...",

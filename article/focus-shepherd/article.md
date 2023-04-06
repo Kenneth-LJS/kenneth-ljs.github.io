@@ -13,7 +13,7 @@ I’m an easily-distracted person. Whenever I’m bored, my fingers instinctivel
 
 Am I to blame for the hours of unproductivity? Yes, but only to a certain extent. The thing is, websites profit off your attention. When you watch an advertisement on their platform, they make money, and so they are incentivised to keep you endlessly scrolling to the next social media post, automatically showing you the next video on your feed, or filling in yet another “What’s Your Spirit Animal?” quiz.
 
-Companies use psychological tactics to keep you coming back, whether consciously or otherwise. After reading “Hooked” by Nir Eyal[url], I learnt a lot about how these platforms and apps are fighting for our attention.
+Companies use psychological tactics to keep you coming back, whether consciously or otherwise. After reading <a href="https://www.goodreads.com/en/book/show/22668729" target="_blank" rel="noopener noreferrer">“Hooked” by Nir Eyal</a>, I learnt a lot about how these platforms and apps are fighting for our attention.
 
 It’s scary, really, how subconscious it’s become. A 1-minute trip to the washroom is accompanied by a quick scroll on Facebook. The moment we’re waiting at the bus stop or train station, out comes Twitter before we’re even aware of what we’re doing. Just to get a feel of how powerful these impulses are, just for one day, switch up the positions of your social media apps on your phone. Watch how your fingers automatically tap on where the app used to be, the moment you’re looking for that temporary stimulation.
 

@@ -354,7 +354,7 @@ class WrappedList(list):
         self.callback()
         return result
 
-    # … Other operations
+    # ... Other operations
 ```
 
 We can then add it to the `SnapConsole` class.
@@ -403,7 +403,7 @@ Update: ['Log 1']
 Update: ['Log 1', 'Log 2']
 ```
 
-Huh, what happened here? It turns out that when we ran `console.logs = ['Log 3', 'Log 4']`, we replaced `console.logs` with a regular list rather than a wrapped one. We could force users to do something like this:
+Huh, what happened here? It turns out that when we ran `console.logs = ['Log 3', 'Log 4']`, we replaced `console.logs` with a regular list rather than a wrapped one. This means that mutations from that point onwards do not update the screen. We could force users to do something like this:
 
 ```python
 console.logs = WrappedList(console.refresh, ['Log 3', 'Log 4'])
@@ -509,7 +509,7 @@ with open('filename.txt') as f:
     f.read()
 ```
 
-Python once again comes to the rescue. By defining the `__enter__` and `__exit__` functions, we can achieve the same functionality.
+Python once again comes to the rescue. By defining `__enter__` and `__exit__` functions, we can achieve the same functionality.
 
 ```python
 class SnapConsole:
@@ -558,13 +558,13 @@ async def main():
 asyncio.run(main())
 ```
 
-And now the test…
+And now to test it out…
 
 <p align=center>
   <video src="./static/counter-snap-console.mp4" style="width: min(100%, 800px)" preload="auto" muted autoplay loop playsinline data-wf-ignore="true" data-object-fit="cover">
 </p>
 
-Phew! Everything works fine.
+Phew! Everything works as expected.
 
 I could go into everything I did for the Snap Console (colours, styles, headers, and more!), but this article is long enough. If you’d like to find out more about the features, check out the <a href="https://github.com/Kenneth-LJS/snap-console" target="_blank" rel="noopener noreferrer">documentation</a>.
 
