@@ -14,8 +14,6 @@ As an avid RuneScape player, I attend the Warband raids event that regularly hap
 
 I have a clan that does the raids. We station people across different worlds to locate and call out the camps. To optimise the calls, we use acronyms.
 
-For instance, “12 dwf” means that a camp on world 12 has spawned at the DWF location (there are 3 locations: DWF, ELM, and RDI).
-
 - “12 dwf” means that a camp on world 12 has spawned at the Dark Warrior Fortress.
     - There are 3 possible spawn locations: Dark Warrior Fortress (DWF), East Lava Maze (ELM), and Red Dragon Isle (RDI).
 - “86 msf” means that the resources on the world 86 camp are Mining, Smithing, and Farming.
